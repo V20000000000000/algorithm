@@ -52,6 +52,8 @@ int main()
     }
     cout << endl;
 
+    delete[] dynamicArray;
+
     cout << "Done!!!" << endl;
     return 0;
 }

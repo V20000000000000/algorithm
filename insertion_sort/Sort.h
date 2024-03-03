@@ -28,7 +28,7 @@ void Sorting :: sort(T (&array)[N])
     for(size_t j = 1; j < N; j++)
     {
         T key = array[j];
-        size_t i = j - 1;
+        int i = j - 1;
         while((i >= 0) && (array[i] > key))
         {
             array[i+1] = array[i];
@@ -45,7 +45,7 @@ void Sorting :: sort(std::vector<T> &vec)
     for(size_t j = 1; j < vec.size(); j++)
     {
         T key = vec[j];
-        size_t i = j - 1;
+        int i = j - 1;
         while((i >= 0) && (vec[i] > key))
         {
             vec[i+1] = vec[i];
@@ -62,7 +62,7 @@ void Sorting :: sort(T *array, size_t N)
     for(size_t j = 1; j < N; j++)
     {
         T key = array[j];
-        size_t i = j - 1;
+        int i = j - 1;
         while((i >= 0) && (array[i] > key))
         {
             array[i+1] = array[i];
