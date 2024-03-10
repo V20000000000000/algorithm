@@ -1,9 +1,9 @@
 #include <limits.h>
+#include <iostream>
+
 #include "MergeSort.h"
 
-MergeSort::MergeSort()
-{
-};
+using namespace std;
 
 void MergeSort::mergeSort(vector<int>& A, int p, int r)
 {
@@ -13,6 +13,8 @@ void MergeSort::mergeSort(vector<int>& A, int p, int r)
         mergeSort(A, p, q);
         mergeSort(A, q + 1, r);
         merge(A, p, q, r);
+    }else{
+        return;
     }
 };
 
@@ -20,24 +22,23 @@ void MergeSort::merge(vector<int>& A, int p, int q, int r)
 {
     int nl = q - p + 1;
     int nr = r - q;
-
     vector<int> arrayL(nl + 1);
     vector<int> arrayR(nr + 1);
 
-    copyArray(A, arrayL, arrayR, p, q);
+    copyArray(A, arrayL, arrayR, p, q, nl, nr);
     combineArray(A, arrayL, arrayR, p, q, r);
 };
 
-void MergeSort::copyArray(vector<int> A, vector<int>& arrayL, vector<int>& arrayR, int nl, int nr)
+void MergeSort::copyArray(vector<int>& A, vector<int>& arrayL, vector<int>& arrayR, int p, int q, int nl, int nr)
 {
-    for (int i = 0; i < arrayL.size(); i++)
+    for (int i = 0; i < nl; i++)
     {
-        arrayL[i] = A[nl + i];
+        arrayL[i] = A[p + i];
     }
 
-    for (int j = 0; j < arrayR.size(); j++)
+    for (int j = 0; j < nr; j++)
     {
-        arrayR[j] = A[nr + j + 1];
+        arrayR[j] = A[q + 1 + j];
     }
 
     arrayL[nl] = INT_MAX;
