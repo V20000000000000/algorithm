@@ -5,10 +5,10 @@
 
 int main()
 {
-    vector<int> A = { 8, 4, 7, 1, 3, 2, 6, 5 };
+    vector<int> A = { 8, 4, 7, 1, 3, 2, 6, 5 , 9, 15, 12, 11, 10, 14, 13};
     MergeSort Sorting;
-
-    Sorting.mergeSort(A, 1, A.size());
+    cout << "A size: " << A.size() << endl;
+    Sorting.mergeSort(A, 0, A.size() - 1);
 
     cout << "Sorted array: " << endl;
     
