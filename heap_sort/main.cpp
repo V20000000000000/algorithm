@@ -12,9 +12,23 @@ int main ()
 
     vector<int> arr(size);
 
+    cout << "Unsorted array: " << endl;
+
     for (int i = 0; i < size; i++)
     {
         arr[i] = rand() % size;
-        cout << arr[i] << endl;
+        cout << arr[i] << " ";
     }
+
+    cout << endl;
+
+    HeapSort hs(arr);
+
+    cout << "Sorted array: " << endl;
+
+    for (int i = 0; i < size; i++)
+    {
+        cout << arr[i] << " ";
+    }
+
 }
